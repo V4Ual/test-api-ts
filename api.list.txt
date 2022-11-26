@@ -1,0 +1,5 @@
+register = http://localhost:4001/api/v1/user/registration
+findAll = http://localhost:4001/api/v1/user/findall
+login = http://localhost:4001/api/v1/user/login
+delete = http://localhost:4001/api/v1/user/delete
+update = http://localhost:4001/api/v1/user/update

@@ -9,7 +9,7 @@ dotenv.config()
 
 app.use(expres.static('public'))
 app.use(json())
-app.use(urlencoded({extended:true}))
+app.use(urlencoded({extended:false}))
 app.use('/api/v1',indexRoute)
 
 db.sequelize.sync({logging: false}).then(()=>console.log('sync'))

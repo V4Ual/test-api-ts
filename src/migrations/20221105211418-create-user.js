@@ -10,16 +10,25 @@ module.exports = {
         type: Sequelize.UUID,
       },
       firstName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50)
       },
       lastName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50)
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50)
+      },
+      date_of_birth:{
+        type:Sequelize.STRING,
       },
       password:{
-        type:Sequelize.STRING
+        type:Sequelize.STRING(50)
+      },
+      model:{
+        type:Sequelize.STRING(50)
+      },
+      version:{
+        type:Sequelize.STRING(50)
       },
       createdAt: {
         allowNull: false,

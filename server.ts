@@ -5,6 +5,10 @@ import dotenv from 'dotenv'
 import { urlencoded } from 'body-parser'
 import allRoute from './src/router'
 import db from './src/models'
+import multer from 'multer'
+
+const upload = multer()
+
 const app:Express = expres()
 const indexRoute:expres.Router = allRoute
 dotenv.config()
@@ -12,6 +16,7 @@ dotenv.config()
 app.use(expres.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:false}))
+app.use(upload.none())
 
 
 app.use('/api/v1',indexRoute)

@@ -1,4 +1,6 @@
-import expres,{Express, json} from 'express'
+import expres from 'express'
+import {Express,json} from 'express'
+import bodyParser from "body-parser"
 import dotenv from 'dotenv'
 import { urlencoded } from 'body-parser'
 import allRoute from './src/router'
@@ -8,8 +10,10 @@ const indexRoute:expres.Router = allRoute
 dotenv.config()
 
 app.use(expres.static('public'))
-app.use(json())
-app.use(urlencoded({extended:false}))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
+
+
 app.use('/api/v1',indexRoute)
 
 db.sequelize.sync({logging: false}).then(()=>console.log('sync'))

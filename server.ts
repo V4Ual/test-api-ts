@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(upload.none())
 
 
+//add all router
 app.use('/api/v1',indexRoute)
 
 db.sequelize.sync({logging: false}).then(()=>console.log('sync'))
